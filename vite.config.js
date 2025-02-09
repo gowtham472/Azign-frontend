@@ -4,8 +4,8 @@ import envCompatible from 'vite-plugin-env-compatible';
 
 export default defineConfig({
   plugins: [react(), envCompatible()],
-  base: '/',
+  base: '/azign-frontend/',
   define: {
     'process.env': {}
-  }  
+  }
 });

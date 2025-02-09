@@ -6,7 +6,7 @@
   "homepage": "https://gowtham472.github.io/azign-frontend/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/azign-frontend/",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
