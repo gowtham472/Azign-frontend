@@ -1,0 +1,57 @@
+
+
+/* Individual Project Item */
+.project-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Link */
+.project-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.project-link:hover {
+    color: #85c0ff;
+}
+
+/* Project Details */
+.project-name {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.project-team-lead, 
+.project-members {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* No Projects Message */
+.no-projects {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 20px;
+}

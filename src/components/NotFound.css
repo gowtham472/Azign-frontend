@@ -1,0 +1,35 @@
+.error-svg text {
+    font-size: 100px;
+    font-weight: bold;
+    fill: #ff4757;
+    font-family: Arial, sans-serif;
+    animation: float 3s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.error-message {
+    font-size: 18px;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+.back-home-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #ff4757;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-home-btn:hover {
+    background: #e84118;
+}
