@@ -18,7 +18,7 @@ const EnterCode = () => {
   useEffect(() => {
     const storedCode = localStorage.getItem("SpCode");
     if (storedCode) {
-      navigate(`${BASE_URL}/space/${storedCode}`);
+      navigate(`/space/${storedCode}`);
     }
   }, [navigate]);
 
