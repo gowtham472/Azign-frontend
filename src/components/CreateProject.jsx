@@ -12,7 +12,7 @@ export default function CreateProject() {
     const [status, setStatus] = useState('In Progress');
     const { SpCode } = useParams();
     const navigate = useNavigate();
-
+    const BASE_URL = "https://azign-backend.onrender.com";
     const handleSubmit = async (e) => {
         e.preventDefault();
         const project = {
@@ -27,7 +27,7 @@ export default function CreateProject() {
         };
 
         try {
-            await axios.post(`/api/space/${SpCode}/projects/create`, project);
+            await axios.post(`${BASE_URL}/api/space/${SpCode}/projects/create`, project);
             navigate(`/space/${SpCode}`);
         } catch (error) {
             console.error('Error creating project:', error);

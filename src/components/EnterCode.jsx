@@ -12,11 +12,13 @@ const EnterCode = () => {
   const navigate = useNavigate();
   const { setSpCode } = useSpace();
 
+  const BASE_URL = "https://azign-backend.onrender.com";
+
   // Redirect if space code already exists in localStorage
   useEffect(() => {
     const storedCode = localStorage.getItem("SpCode");
     if (storedCode) {
-      navigate(`/space/${storedCode}`);
+      navigate(`${BASE_URL}/space/${storedCode}`);
     }
   }, [navigate]);
 
@@ -30,7 +32,7 @@ const EnterCode = () => {
 
   const handleCreateSpace = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/space/create", {
+      const response = await fetch(`${BASE_URL}/api/space/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

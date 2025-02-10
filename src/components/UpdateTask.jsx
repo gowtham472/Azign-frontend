@@ -47,7 +47,7 @@ export default function UpdateTask() {
 
     try {
       await axios.put(
-        `/api/space/${SpCode}/tasks/${taskId}/update`,
+        `${BASE_URL}/api/space/${SpCode}/tasks/${taskId}/update`,
         updatedTask
       );
       navigate(`/space/${SpCode}`);

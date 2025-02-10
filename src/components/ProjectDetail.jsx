@@ -1,43 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useSpace } from '../contexts/SpaceContext'; // Assuming you have an AuthContext for user info
-import axios from 'axios';
 
 function ProjectDetail({ projects }) {
     const { projectCode, SpCode } = useParams();
-    const { user } = useSpace();
     const project = projects.find(p => p.projectCode === projectCode);
 
     if (!project) return <div>Project not found!</div>;
-
-    // Function to check if the comment is within the allowed delete time (e.g., 5 minutes)
-    const canDeleteComment = (commentDate) => {
-        const commentTime = new Date(commentDate).getTime();
-        const currentTime = new Date().getTime();
-        const timeDifference = currentTime - commentTime;
-        const allowedDeleteTime = 5 * 60 * 1000; // 5 minutes in milliseconds
-        return timeDifference <= allowedDeleteTime;
-    };
-
-    // Function to delete the comment
-    const handleDelete = async (commentId) => {
-        try {
-            // Assuming the API endpoint for deleting comments is like this:
-            const response = await axios.delete(`/api/space/${SpCode}/projects/${projectCode}/comments/delete/${commentId}`);
-            
-            if (response.status === 200) {
-                // Remove the comment from the local state after successful deletion
-                project.comments.filter((comment) => comment._id !== commentId);
-                // Update the project state with the new comments list (optional)
-                console.log('Comment deleted successfully');
-                // Optionally, you can trigger a state update here to re-render
-            } else {
-                console.log('Failed to delete the comment');
-            }
-        } catch (error) {
-            console.error('Error deleting comment:', error);
-        }
-    };
 
     return (
         <div className="container">

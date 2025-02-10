@@ -15,6 +15,7 @@ export default function CreateTask() {
     const [deadline, setDeadline] = useState('');
     const { SpCode } = useParams();
     const navigate = useNavigate();
+    const BASE_URL = "https://azign-backend.onrender.com";
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -34,7 +35,7 @@ export default function CreateTask() {
         };
     
         try {
-            const response = await axios.post(`/api/space/${SpCode}/tasks/create`, task);
+            const response = await axios.post(`${BASE_URL}/api/space/${SpCode}/tasks/create`, task);
             console.log("Response:", response.data);
             navigate(`/space/${SpCode}`);
         } catch (error) {
